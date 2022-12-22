@@ -3,6 +3,7 @@
 [![Deploy to Cyclic](https://deploy.cyclic.app/button.svg)](https://deploy.cyclic.app/)
 
 ---------------
+Running example: https://napi-rs-canvas.cyclic.app/
 
 The cyclic runtime environment (AWS Lambda) does not include binaries to run `node-canvas`
 
