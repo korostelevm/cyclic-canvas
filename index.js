@@ -3,9 +3,6 @@ const express = require('express')
 const app = express()
 const router = express.Router()
 
-
-const { promises } = require('fs')
-const { join } = require('path')
 const { createCanvas } = require('@napi-rs/canvas')
 
 
@@ -34,9 +31,6 @@ router.get('/', async (req, res)=>{
     ctx.stroke()
 
     const pngData = await canvas.encode('png') // JPEG, AVIF and WebP are also supported
-    // encoding in libuv thread pool, non-blocking
-    // await promises.writeFile('/tmp/simple.png', pngData)
-    const b64png = Buffer(pngData).toString('base64');
     res.setHeader('Content-Type', 'image/png');
 
     return res.send(pngData)
